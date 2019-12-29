@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+#security.basic.enabled: false
+
+spring:
+  session:
+    store-type: none
+
+
+myblog:
+  security.browser:
+    loginPage: /blog-signIn.html
+    loginType: REDIRECT
+

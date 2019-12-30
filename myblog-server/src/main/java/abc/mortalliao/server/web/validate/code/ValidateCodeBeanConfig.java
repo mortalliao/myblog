@@ -2,6 +2,8 @@ package abc.mortalliao.server.web.validate.code;
 
 import abc.mortalliao.server.web.security.properties.SecurityProperties;
 import abc.mortalliao.server.web.validate.code.image.ImageCodeGenerator;
+import abc.mortalliao.server.web.validate.code.sms.DefaultSmsCodeSender;
+import abc.mortalliao.server.web.validate.code.sms.SmsCodeSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -21,9 +23,9 @@ public class ValidateCodeBeanConfig {
         return codeGenerator;
     }
 
-//    @Bean
-//    @ConditionalOnMissingBean(SmsCodeSender.class)
-//    public SmsCodeSender smsCodeSender() {
-//        return new DefaultSmsCodeSender();
-//    }
+    @Bean
+    @ConditionalOnMissingBean(SmsCodeSender.class)
+    public SmsCodeSender smsCodeSender() {
+        return new DefaultSmsCodeSender();
+    }
 }

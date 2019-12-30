@@ -43,6 +43,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                     .antMatchers("/authentication/require",
+                            "/code/*",
                             securityProperties.getBrowser().getLoginPage())
                     .permitAll()
                 .anyRequest()

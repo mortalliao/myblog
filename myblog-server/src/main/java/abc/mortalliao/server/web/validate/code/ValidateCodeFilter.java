@@ -2,6 +2,9 @@ package abc.mortalliao.server.web.validate.code;
 
 import abc.mortalliao.server.web.security.properties.SecurityConstants;
 import abc.mortalliao.server.web.security.properties.SecurityProperties;
+import abc.mortalliao.server.web.validate.code.ValidateCodeProcessorHolder;
+import abc.mortalliao.server.web.validate.code.ValidateCodeType;
+import abc.mortalliao.server.web.validate.code.exception.ValidateCodeException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,7 @@ package abc.mortalliao.server.web.validate.code.sms;
 
 import abc.mortalliao.server.web.security.properties.SecurityConstants;
 import abc.mortalliao.server.web.validate.code.ValidateCode;
-import abc.mortalliao.server.web.validate.code.impl.AbstractValidateCodeProcessor;
+import abc.mortalliao.server.web.validate.code.AbstractValidateCodeProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.ServletRequestUtils;

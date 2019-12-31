@@ -1,6 +1,7 @@
 package abc.mortalliao.server.web.security;
 
 import abc.mortalliao.server.web.security.properties.SecurityProperties;
+import abc.mortalliao.server.web.validate.code.ValidateCodeFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.preauth.AbstractPreAuthenticatedProcessingFilter;
 
 /**
  * @author Jim
@@ -26,6 +28,9 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthenticationFailureHandler myBlogAuthenticationFailureHandler;
 
+    @Autowired
+    private ValidateCodeFilter validateCodeFilter;
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -33,7 +38,8 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin()
+        http.addFilterBefore(validateCodeFilter,  AbstractPreAuthenticatedProcessingFilter.class)
+                .formLogin()
 //                .loginPage("/blog-signIn.html")
                 .loginPage("/authentication/require")
                 .loginProcessingUrl("/authentication/form")

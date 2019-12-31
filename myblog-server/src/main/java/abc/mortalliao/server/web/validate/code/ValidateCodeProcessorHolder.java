@@ -1,5 +1,6 @@
 package abc.mortalliao.server.web.validate.code;
 
+import abc.mortalliao.server.web.validate.code.exception.ValidateCodeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

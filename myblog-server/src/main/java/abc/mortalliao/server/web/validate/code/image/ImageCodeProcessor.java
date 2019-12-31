@@ -1,6 +1,6 @@
 package abc.mortalliao.server.web.validate.code.image;
 
-import abc.mortalliao.server.web.validate.code.impl.AbstractValidateCodeProcessor;
+import abc.mortalliao.server.web.validate.code.AbstractValidateCodeProcessor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.ServletWebRequest;
 

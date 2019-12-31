@@ -1,4 +1,4 @@
-package abc.mortalliao.server.web.validate.code;
+package abc.mortalliao.server.web.validate.code.exception;
 
 import org.springframework.security.core.AuthenticationException;
 
